@@ -62,6 +62,7 @@ class Program
 
     static void Create()
     {
+        List<string> array = new List<string>();
         string username, password;
         Console.Write("Create Username : "); username = Convert.ToString(Console.ReadLine());
         Console.Write("Create Password : "); password = Convert.ToString(Console.ReadLine());
