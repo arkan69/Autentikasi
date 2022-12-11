@@ -1,0 +1,5 @@
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.csproj.AssemblyReference.cache
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.GeneratedMSBuildEditorConfig.editorconfig
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.AssemblyInfoInputs.cache
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.AssemblyInfo.cs
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.csproj.CoreCompileInputs.cache
