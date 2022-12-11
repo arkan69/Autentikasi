@@ -3,3 +3,13 @@ D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.Gener
 D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.AssemblyInfoInputs.cache
 D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.AssemblyInfo.cs
 D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.csproj.CoreCompileInputs.cache
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\bin\Debug\net6.0\Autentikasi.exe
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\bin\Debug\net6.0\Autentikasi.deps.json
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\bin\Debug\net6.0\Autentikasi.runtimeconfig.json
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\bin\Debug\net6.0\Autentikasi.dll
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\bin\Debug\net6.0\Autentikasi.pdb
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.dll
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\refint\Autentikasi.dll
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.pdb
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\Autentikasi.genruntimeconfig.cache
+D:\ARKA\MCC (KERJAAN)\Autentikasi\Autentikasi\obj\Debug\net6.0\ref\Autentikasi.dll
