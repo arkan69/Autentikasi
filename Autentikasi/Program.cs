@@ -1,10 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Text.RegularExpressions;
+
 namespace Autentikasi;
 class Program
 {
+    public const String NAME = "arkansyah";
+    public const String USERNAME = "arkansyah";
+    public const String PASSWORD = "Wibowo2$";
     static void Main(string[] args)
     {
         Apps();
+        
     }
 
     static void Apps()
@@ -58,6 +64,18 @@ class Program
     {
         string username, password;
         Console.Write("Create Username : "); username = Convert.ToString(Console.ReadLine());
+        Console.Write("Create Password : "); password = Convert.ToString(Console.ReadLine());
+        if (password.Length < 8 || password.Length > 16)
+        {
+            Console.WriteLine("Password must be in range of 8-16 characters.");
+        }
+        Regex regex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+");
+
+        if (regex.Match(password).Value == "")
+        {
+            Console.WriteLine("Password must contains alphanumeric characters and atleast 1 special symbol.");
+        }
+
         Console.Write("Create Password : "); password = Convert.ToString(Console.ReadLine());
     }
 }
