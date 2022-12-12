@@ -193,5 +193,31 @@ class Program
         Console.ReadKey(true);
     }
 
+    static void Login(List<string> username, List<string> password)
+    {
+        Console.Clear();
+        Console.WriteLine("==LOGIN==");
+        Console.Write("USERNAME : ");
+        string str1 = Console.ReadLine();
+        Console.Write("PASSWORD : ");
+        string str2 = Console.ReadLine();
+        for (int i = 0; i < username.Count; i++)
+        {
+            if (str1.Equals(username[i]) && str2.Equals(password[i].ToString()))
+            {
+                Console.WriteLine("MESSAGE : Login Success!");
 
+            }
+            else
+            {
+                Console.WriteLine("User is not exist or username and password doesnt match!");
+            }
+        }
+        Console.ReadKey(true);
+    }
+
+    static void Pesan(string pesan)
+    {
+        Console.WriteLine("User Succes to " + pesan);
+    }
 }
