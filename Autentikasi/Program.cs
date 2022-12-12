@@ -6,8 +6,90 @@ class Program
 {
     static void Main(string[] args)
     {
-        Apps();
-        
+        List<string> firstname = new List<string>();
+        List<string> lastname = new List<string>();
+        List<string> username = new List<string>();
+        List<string> password = new List<string>();
+
+        bool main = true;
+        while (main)
+        {
+            UserMenu();
+
+            Console.Write("Input :");
+            int pilihmenu = Convert.ToInt32(Console.ReadLine());
+
+            try
+            {
+                switch (pilihmenu)
+                {
+                    case 1:
+                        Create(firstname, lastname, username, password);
+                        break;
+                    case 2:
+
+                        bool flag = true;
+                        while (flag)
+                        {
+                            TampilUser(firstname, lastname, username, password);
+
+                            int option_user = Convert.ToInt32(Console.ReadLine());
+                            if (option_user == 1)
+                            {
+                                EditUser(firstname, lastname, username, password);
+                                flag = true;
+                            }
+                            else if (option_user == 2)
+                            {
+                                HapusUser(firstname, lastname, username, password);
+                                flag = true;
+                            }
+                            else if (option_user == 3)
+                            {
+                                flag = false;
+                                main = true;
+                            }
+                            else
+                            {
+                                Console.WriteLine("ERROR : Input Not Valid");
+
+                                Console.ReadKey(true);
+                                flag = true;
+                            }
+                        }
+                        break;
+                    case 3:
+                        Console.Clear();
+                        CariUser(firstname, lastname, username, password);
+                        main = true;
+                        break;
+                    case 4:
+                        Login(username, password);
+                        main = true;
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("ERROR : Input Not Valid");
+
+                        Console.ReadKey(true);
+
+                        main = true;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR : Input Not Valid");
+
+                Console.ReadKey(true);
+
+                main = true;
+            }
+
+        }
+
     }
 
     static void UserMenu()
