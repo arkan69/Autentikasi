@@ -78,4 +78,32 @@ class Program
         Console.ReadKey(true);
 
     }
+
+    static void LihatUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
+    {
+        Console.Clear();
+        Console.WriteLine("==SHOW USER==");
+
+        int user_id = 0;
+        for (int i = 0; i < firstname.Count; i++)
+        {
+            user_id++;
+            Console.WriteLine("========================");
+            Console.WriteLine($"ID\t: {user_id}");
+            Console.WriteLine($"Name\t: {firstname[i]} {lastname[i]}");
+            Console.WriteLine($"Username: {username[i]}");
+            Console.WriteLine($"Password: {password[i]}");
+            Console.WriteLine("========================");
+        }
+    }
+
+    static void TampilUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
+    {
+        Console.Clear();
+        LihatUser(firstname, lastname, username, password);
+        Console.WriteLine("\nMenu User");
+        Console.WriteLine("1. Edit User");
+        Console.WriteLine("2. Delete User");
+        Console.WriteLine("3. Back");
+    }
 }
