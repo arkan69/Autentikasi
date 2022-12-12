@@ -64,7 +64,7 @@ class Program
                         main = true;
                         break;
                     case 4:
-                        Login(username, password);
+                        MasukUser(username, password);
                         main = true;
                         break;
                     case 5:
@@ -172,10 +172,10 @@ class Program
         {
             user_id++;
             Console.WriteLine("========================");
-            Console.WriteLine($"ID\t: {user_id}");
-            Console.WriteLine($"Name\t: {firstname[i]} {lastname[i]}");
-            Console.WriteLine($"Username: {username[i]}");
-            Console.WriteLine($"Password: {password[i]}");
+            Console.WriteLine("ID\t: "+user_id);
+            Console.WriteLine("Name\t: "+firstname[i], lastname[i]);
+            Console.WriteLine("Username: "+username[i]);
+            Console.WriteLine("Password: "+password[i]);
             Console.WriteLine("========================");
         }
         Console.WriteLine("\nMenu User");
@@ -265,7 +265,7 @@ class Program
             if (firstname[i].ToLower().Contains(name.ToLower()) || lastname[i].ToLower().Contains(name.ToLower()))
             {
                 Console.WriteLine("========================");
-                Console.WriteLine($"ID\t: {i + 1}");
+                Console.WriteLine("ID\t: "+(i+1));
                 Console.WriteLine("Name\t: " + firstname[i], lastname[i]);
                 Console.WriteLine("Username: " + username[i]);
                 Console.WriteLine("Password: " + password[i]);
@@ -275,7 +275,7 @@ class Program
         Console.ReadKey(true);
     }
 
-    static void Login(List<string> username, List<string> password)
+    static void MasukUser(List<string> username, List<string> password)
     {
         Console.Clear();
         Console.WriteLine("==LOGIN==");
