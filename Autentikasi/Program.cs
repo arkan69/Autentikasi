@@ -100,10 +100,94 @@ class Program
     static void TampilUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
     {
         Console.Clear();
-        LihatUser(firstname, lastname, username, password);
+        //LihatUser(firstname, lastname, username, password);
+        Console.Clear();
+        Console.WriteLine("==SHOW USER==");
+
+        int user_id = 0;
+        for (int i = 0; i < firstname.Count; i++)
+        {
+            user_id++;
+            Console.WriteLine("========================");
+            Console.WriteLine($"ID\t: {user_id}");
+            Console.WriteLine($"Name\t: {firstname[i]} {lastname[i]}");
+            Console.WriteLine($"Username: {username[i]}");
+            Console.WriteLine($"Password: {password[i]}");
+            Console.WriteLine("========================");
+        }
         Console.WriteLine("\nMenu User");
         Console.WriteLine("1. Edit User");
         Console.WriteLine("2. Delete User");
         Console.WriteLine("3. Back");
+    }
+
+    static void EditUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
+    {
+        bool trofal = true;
+        do
+        {
+            Console.Write("Id Yang Ingin Diubah : ");
+            int uid = Convert.ToInt32(Console.ReadLine());
+
+            if (uid <= firstname.Count)
+            {
+                Console.Write("First Name : ");
+                string first = Console.ReadLine();
+                firstname[uid - 1] = NameAuth(first);
+
+                Console.Write("Last Name : ");
+                string last = Console.ReadLine();
+                lastname[uid - 1] = NameAuth(last);
+
+                username[uid - 1] = first.Substring(0, 2) + last.Substring(0, 2);
+
+                Console.Write("Password : ");
+                password[uid - 1] = PasswordAuth(Console.ReadLine());
+
+                Pesan("Edited");
+
+                Console.ReadKey(true);
+
+                trofal = false;
+            }
+            else
+            {
+                Console.WriteLine("User Not Found!!!");
+                trofal = true;
+            }
+        }
+        while (trofal);
+
+
+    }
+
+    static void HapusUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
+    {
+        bool trofal = true;
+        do
+        {
+            Console.Write("Id Yang Ingin Dihapus : ");
+            int uid = Convert.ToInt32(Console.ReadLine());
+
+            if (uid <= firstname.Count)
+            {
+                firstname.RemoveAt(uid - 1);
+                lastname.RemoveAt(uid - 1);
+                username.RemoveAt(uid - 1);
+                password.RemoveAt(uid - 1);
+
+                Pesan("Deleted");
+
+                Console.ReadKey(true);
+
+                trofal = false;
+            }
+            else
+            {
+                Console.WriteLine("User Not Found!!!");
+                trofal = true;
+            }
+        }
+        while (trofal);
     }
 }
