@@ -4,16 +4,13 @@ using System.Text.RegularExpressions;
 namespace Autentikasi;
 class Program
 {
-    public const String NAME = "arkansyah";
-    public const String USERNAME = "arkansyah";
-    public const String PASSWORD = "Wibowo2$";
     static void Main(string[] args)
     {
         Apps();
         
     }
 
-    static void Apps()
+    static void UserMenu()
     {
         Console.Clear();
         Console.WriteLine("==BASIC AUTHENTICATION==");
@@ -22,61 +19,63 @@ class Program
         Console.WriteLine("3. Search User");
         Console.WriteLine("4. Login User");
         Console.WriteLine("5. Exit");
-        Console.Write("Input : ");
-        try
-        {
-            switch (Convert.ToInt32(Console.ReadLine()))
-            {
-                case 1:
-                    Create();
-                    break;
-                case 2:
-                    //ShowUser(listUsers);
-                    Console.WriteLine("Show User!!");
-                    break;
-                case 3:
-                    //Search(listUsers);
-                    Console.WriteLine("Search User!!");
-                    break;
-                case 4:
-                    //Login(listUsers);
-                    Console.WriteLine("Login User!!");
-                    break;
-                case 5:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("ERROR : Input Not Valid");
-                    Console.ReadKey();
-                    Apps();
-                    break;
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("ERROR : Input Not Valid");
-            Console.ReadKey();
-            Apps();
-        }
+
     }
 
-    static void Create()
+    static string NameAuth(string nama)
     {
-        List<string> array = new List<string>();
-        string username, password;
-        Console.Write("Create Username : "); username = Convert.ToString(Console.ReadLine());
-        Console.Write("Create Password : "); password = Convert.ToString(Console.ReadLine());
-        if (password.Length < 8 || password.Length > 16)
+        bool trofal = true;
+        if (nama.Length < 2)
         {
-            Console.WriteLine("Password must be in range of 8-16 characters.");
+            Console.WriteLine("\nName has to be at least consisting 2 characters or more.");
+            Console.Write("Input : ");
+            nama = Console.ReadLine();
+            trofal = false;
+            return nama;
         }
-        Regex regex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+");
+        trofal = true;
+        return nama;
+    }
 
-        if (regex.Match(password).Value == "")
+    static string PasswordAuth(string kataSandi)
+    {
+        bool trofal;
+        do
         {
-            Console.WriteLine("Password must contains alphanumeric characters and atleast 1 special symbol.");
+            if (kataSandi.Length > 7 && kataSandi.Any(char.IsUpper) && kataSandi.Any(char.IsLower) && kataSandi.Any(char.IsNumber))
+            {
+                trofal = false;
+            }
+            else
+            {
+                Console.WriteLine("\nPassword must have at least 8 characters\n with at least one Capital letter, at least one lower case letter and at least one number.");
+                Console.Write("Password: ");
+                kataSandi = Console.ReadLine();
+                trofal = true;
+            }
         }
+        while (trofal);
+        return kataSandi;
+    }
 
-        Console.Write("Create Password : "); password = Convert.ToString(Console.ReadLine());
+    static void Create(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
+    {
+        Console.Clear();
+        Console.Write("First Name: ");
+        string first = Console.ReadLine();
+        firstname.Add(NameAuth(first));
+
+        Console.Write("Last Name: ");
+        string last = Console.ReadLine();
+        lastname.Add(NameAuth(last));
+
+        string gabung = first.Substring(0, 2) + last.Substring(0, 2);
+
+        Console.Write("Password: ");
+        password.Add(PasswordAuth(Console.ReadLine()));
+
+        Pesan("User Created");
+        Console.ReadKey(true);
+
     }
 }
