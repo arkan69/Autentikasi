@@ -70,6 +70,7 @@ class Program
         lastname.Add(NameAuth(last));
 
         string gabung = first.Substring(0, 2) + last.Substring(0, 2);
+        username.Add(gabung);
 
         Console.Write("Password: ");
         password.Add(PasswordAuth(Console.ReadLine()));
@@ -79,28 +80,8 @@ class Program
 
     }
 
-    static void LihatUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
-    {
-        Console.Clear();
-        Console.WriteLine("==SHOW USER==");
-
-        int user_id = 0;
-        for (int i = 0; i < firstname.Count; i++)
-        {
-            user_id++;
-            Console.WriteLine("========================");
-            Console.WriteLine($"ID\t: {user_id}");
-            Console.WriteLine($"Name\t: {firstname[i]} {lastname[i]}");
-            Console.WriteLine($"Username: {username[i]}");
-            Console.WriteLine($"Password: {password[i]}");
-            Console.WriteLine("========================");
-        }
-    }
-
     static void TampilUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
     {
-        Console.Clear();
-        //LihatUser(firstname, lastname, username, password);
         Console.Clear();
         Console.WriteLine("==SHOW USER==");
 
@@ -190,4 +171,27 @@ class Program
         }
         while (trofal);
     }
+
+    static void CariUser(List<string> firstname, List<string> lastname, List<string> username, List<string> password)
+    {
+        Console.WriteLine("==CARI AKUN==");
+        Console.Write("Masukan Nama : ");
+        string name = Console.ReadLine();
+
+        for (int i = 0; i < firstname.Count; i++)
+        {
+            if (firstname[i].ToLower().Contains(name.ToLower()) || lastname[i].ToLower().Contains(name.ToLower()))
+            {
+                Console.WriteLine("========================");
+                Console.WriteLine($"ID\t: {i + 1}");
+                Console.WriteLine("Name\t: " + firstname[i], lastname[i]);
+                Console.WriteLine("Username: " + username[i]);
+                Console.WriteLine("Password: " + password[i]);
+                Console.WriteLine("========================");
+            }
+        }
+        Console.ReadKey(true);
+    }
+
+
 }
