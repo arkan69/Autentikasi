@@ -113,7 +113,7 @@ class Program
             Console.Write("Input : ");
             nama = Console.ReadLine();
             trofal = false;
-            return nama;
+            //return nama;
         }
         trofal = true;
         return nama;
